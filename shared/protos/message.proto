@@ -76,3 +76,11 @@ message MeshControl {
   uint32 RelayToIp = 4;
   uint32 RelayFromIp = 5;
 }
+
+message MeshClientMessage {
+  oneof message {
+    MeshMeta meshMeta = 1;
+    MeshHandshake handshake = 3;
+    MeshControl control = 4;
+  }
+}
